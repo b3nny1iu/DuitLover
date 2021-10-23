@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { Color } from '../../styles/Color';
+import InvestmentItem from '../atom/InvestmentItem';
 
 const DATA = [
     {
@@ -29,15 +30,9 @@ const DATA = [
     },
 ];
 
-const Item = ({ title }) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
-);
-
 const InvestmentList = ({headerComponent, footerComponent}) => {
     const renderItem = ({ item }) => (
-        <Item title={item.title} />
+        <InvestmentItem />
     );
 
     return (

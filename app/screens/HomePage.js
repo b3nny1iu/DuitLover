@@ -4,6 +4,7 @@ import Button from '../components/atom/Button'
 import InvestmentDetail from '../components/molecules/InvestmentDetail'
 import InvestmentList from '../components/molecules/InvestmentList'
 import Welcome from '../components/molecules/Welcome'
+import { Padding } from '../styles/Dimens'
 import { TextStyle } from '../styles/TextStyle'
 
 const HomePage = () => {
@@ -17,7 +18,7 @@ const HomePage = () => {
                         <>
                             <Welcome />
                             <InvestmentDetail roundedBorder={true} />
-                            <Text style={TextStyle.secondaryBoldBigText}>Active Investment List</Text>
+                            <Text style={[TextStyle.secondaryBoldBigText, Padding.common_top_horizontal]}>Active Investment List</Text>
                         </>
                     }
                 />

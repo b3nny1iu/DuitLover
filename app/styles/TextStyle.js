@@ -12,22 +12,16 @@ export const TextStyle = {
         fontWeight: 'bold',
         fontSize: Dimens.text_big,
         color: Color.secondary,
-        paddingHorizontal: 12,
-        paddingTop: 12,
     },
     secondaryBoldMediumText: {
         fontWeight: 'bold',
         fontSize: Dimens.text_medium,
         color: Color.secondary,
-        paddingHorizontal: 12,
-        paddingTop: 12,
     },
-    secondaryBoldRegularText: {
+    secondaryBoldCaptionText: {
         fontWeight: 'bold',
-        fontSize: Dimens.text_Ca,
+        fontSize: Dimens.text_caption,
         color: Color.secondary,
-        paddingHorizontal: 12,
-        paddingTop: 12,
     },
     darkBoldBigText: {
         fontWeight: 'bold',
@@ -39,7 +33,5 @@ export const TextStyle = {
         fontWeight: 'bold',
         fontSize: Dimens.text_regular,
         color: Color.dark,
-        paddingHorizontal: 12,
-        paddingBottom: 15,
     },
 }
