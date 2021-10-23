@@ -1,47 +1,21 @@
 import React, { useState } from 'react'
-import { Text, Button, TextInput, View, SafeAreaView, StyleSheet } from 'react-native'
-import { Picker } from '@react-native-picker/picker';
+import { View, SafeAreaView, StyleSheet } from 'react-native'
+import { Color } from '../styles/Color'
+import { Dimens } from '../styles/Dimens'
+import InsertInvestasiForm from '../components/molecules/InsertInvestasiForm'
+import Button from '../components/atom/Button'
 
 
-const InsertInvestasiScreen = () => {
-    const [text, onChangeText] = useState(null);
-    const [number, onChangeNumber] = useState(null);
-    const [selectedType, setSelectedType] = useState();
+const InsertInvestasi = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View>
-                <Text style={styles.label}>Nama Investasi</Text>
-                <TextInput
-                    style={styles.txtInput}
-                    onChangeText={onChangeText}
-                    value={text}
-                    placeholder="Masukan nama investasi"
-                />
-                <Text style={styles.label}>Jenis Investasi</Text>
-                <Picker
-                    selectedValue={selectedType}
-                    onValueChange={(itemValue, itemIndex) =>
-                        setSelectedType(itemValue)
-                    }>
-                    <Picker.Item label="Saham" value="saham" />
-                    <Picker.Item label="Reksadana" value="reksadana" />
-                    <Picker.Item label="Logam Mulia" value="logammulia" />
-                </Picker>
-                <Text style={styles.label}>Jumlah Investasi</Text>
-                <TextInput
-                    style={styles.txtInput}
-                    onChangeText={onChangeNumber}
-                    value={number}
-                    placeholder="Masukan jumlah investasi"
-                    keyboardType="number-pad"
-                />
-                <Button
-                    title="Simpan"
-                    color="green"
-                    //onPress={() => Alert.alert('Button with adjusted color pressed')}
-                />
+            <View style={styles.whiteShadowedCardView}>
+                <InsertInvestasiForm />
+                
             </View>
+            <Button text='Save Investment' styleType='secondaryTopRoundedCorner' />
+
         </SafeAreaView>
     )
 }
@@ -50,7 +24,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         //justifyContent: 'center',
-        marginHorizontal: 16,
+        //marginHorizontal: 50,
+        justifyContent: 'space-between'
     },
     txtInput: {
         height: 40,
@@ -68,7 +43,14 @@ const styles = StyleSheet.create({
         //borderWidth: 1,
         padding: 10,
     },
+    whiteShadowedCardView: {
+        backgroundColor: Color.white,
+        borderColor: Color.light_gray,
+        borderWidth: 2,
+        borderRadius: 10,
+        margin: 10,
+    },
 })
 
 
-export default InsertInvestasiScreen
+export default InsertInvestasi
