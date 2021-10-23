@@ -1,8 +1,9 @@
 import React from 'react'
-import { FlatList, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { Color } from '../styles/Color'
 import { Dimens } from '../styles/Dimens'
 import InvestmentDetail from '../components/molecules/InvestmentDetail'
+import Button from '../components/atom/Button'
 
 const DATA = [
     {
@@ -54,9 +55,7 @@ const HomePage = () => {
                 />
             </ScrollView>
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.secondaryTopRoundedBackground}>
-                <Text style={[styles.whiteBoldMediumText, {textAlign: 'center'}]}>Insert New Investment     +</Text>
-            </TouchableOpacity>
+            <Button text='Insert New Investment     +' styleType='secondaryTopRoundedCorner' />
 
         </SafeAreaView>
     )
@@ -104,11 +103,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 80,
-    },
-    secondaryTopRoundedBackground: {
-        backgroundColor: Color.secondary,
-        borderTopStartRadius: 10, 
-        borderTopEndRadius: 10
     },
     whiteShadowedCardView: {
         backgroundColor: Color.white,
