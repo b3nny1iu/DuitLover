@@ -1,6 +1,5 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { Color } from '../../styles/Color';
+import { FlatList } from 'react-native'
 import InvestmentItem from '../atom/InvestmentItem';
 
 const DATA = [
@@ -30,15 +29,14 @@ const DATA = [
     },
 ];
 
-const InvestmentList = ({headerComponent, footerComponent}) => {
+const InvestmentList = ({data, headerComponent, footerComponent}) => {
     const renderItem = ({ item }) => (
-        <InvestmentItem />
+        <InvestmentItem data={item} />
     );
 
     return (
         <FlatList
-            nestedScrollEnabled 
-            data={DATA}
+            data={data}
             renderItem={renderItem}
             keyExtractor={item => item.id}
             ListHeaderComponent={headerComponent}
@@ -48,21 +46,3 @@ const InvestmentList = ({headerComponent, footerComponent}) => {
 }
 
 export default InvestmentList
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
-      item: {
-        backgroundColor: Color.white,
-        borderColor: Color.light_gray,
-        borderWidth: 1,
-        borderRadius: 10,
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 12,
-      },
-      title: {
-        fontSize: 32,
-      },
-})

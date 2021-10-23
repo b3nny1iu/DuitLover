@@ -12,6 +12,6 @@ export const Padding = {
     },
     'common_bottom_horizontal' : {
         paddingHorizontal: 12,
-        paddingBottom: 12,
+        paddingBottom: 15,
     },   
 }

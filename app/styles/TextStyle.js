@@ -27,7 +27,6 @@ export const TextStyle = {
         fontWeight: 'bold',
         fontSize: Dimens.text_big,
         color: Color.dark,
-        padding: 12
     },
     darkBoldRegularText: {
         fontWeight: 'bold',

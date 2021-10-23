@@ -3,11 +3,11 @@ import { View } from 'react-native'
 import { BackgroundStyle } from '../../styles/BackgroundStyle'
 import LabelValue from './LabelValue'
 
-const InvestmentItem = () => {
+const InvestmentItem = ({data}) => {
     return (
         <View style={BackgroundStyle.whiteShadowedCardView}>
-            <LabelValue textLabel='Investment Title' type='title' />
-            <LabelValue textValue='Amount: 12' />
+            <LabelValue textLabel={`${data.investment}`} type='title' />
+            <LabelValue textValue={`Amount: ${data.amount}`} />
         </View>
     )
 }
