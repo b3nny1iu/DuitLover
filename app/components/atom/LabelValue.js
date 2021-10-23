@@ -1,7 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Color } from '../../styles/Color'
-import { Dimens } from '../../styles/Dimens'
+import { Text, View } from 'react-native'
+import { TextStyle } from '../../styles/TextStyle'
 
 const LabelValue = ({textLabel, textValue, type}) => {
     let labelStyle 
@@ -9,13 +8,13 @@ const LabelValue = ({textLabel, textValue, type}) => {
 
     switch (type) {
         case 'title':
-            labelStyle = [styles.secondaryBoldMediumText]
-            valueStyle = [styles.darkBoldBigText]
+            labelStyle = [TextStyle.secondaryBoldMediumText]
+            valueStyle = [TextStyle.darkBoldBigText]
             break;
     
         default:
-            labelStyle = [styles.secondaryBoldRegularText]
-            valueStyle = [styles.darkBoldRegularText]
+            labelStyle = [TextStyle.secondaryBoldRegularText]
+            valueStyle = [TextStyle.darkBoldRegularText]
             break;
     }
 
@@ -28,34 +27,3 @@ const LabelValue = ({textLabel, textValue, type}) => {
 }
 
 export default LabelValue
-
-const styles = StyleSheet.create({
-    secondaryBoldMediumText: {
-        fontWeight: 'bold',
-        fontSize: Dimens.text_medium,
-        color: Color.secondary,
-        paddingHorizontal: 12,
-        paddingTop: 12,
-    },
-    darkBoldBigText: {
-        fontWeight: 'bold',
-        fontSize: Dimens.text_big,
-        color: Color.dark,
-        paddingHorizontal: 12,
-        paddingBottom: 15,
-    },
-    secondaryBoldRegularText: {
-        fontWeight: 'bold',
-        fontSize: Dimens.text_caption,
-        color: Color.secondary,
-        paddingHorizontal: 12,
-        paddingTop: 12,
-    },
-    darkBoldRegularText: {
-        fontWeight: 'bold',
-        fontSize: Dimens.text_regular,
-        color: Color.dark,
-        paddingHorizontal: 12,
-        paddingBottom: 15,
-    }
-})
