@@ -11,7 +11,8 @@ const InsertInvestasiForm = () => {
         <View>
             <InputFieldText textLabel='Investment Name' textPlaceholder='Type your investment name...' />
             <InvestmentTypePicker textLabel='Investment Type' />
-            <InputFieldNumber textLabel='Total Investment' textPlaceholder='Type your amount of investment...' />
+            <InputFieldNumber textLabel='Total Investment' textPlaceholder='Type your amount of investment...' tipe='amount' />
+            <InputFieldNumber textLabel='Return of Investment' textPlaceholder='Type return of investment...' tipe='return' />
             
         </View>
     )

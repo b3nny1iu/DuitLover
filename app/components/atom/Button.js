@@ -5,7 +5,12 @@ import { TextStyle } from '../../styles/TextStyle'
 
 let buttonStyle = []
 
-const Button = ({text, styleType}) => {
+const Button = ({text, styleType, SaveData}) => {
+
+    //const OnPressHandle = () => {
+    //    console.log(returnValue)
+    //}
+
     switch (styleType) {
         case 'secondaryTopRoundedCorner':
             buttonStyle = [BackgroundStyle.secondaryTopRoundedBackground]
@@ -17,7 +22,7 @@ const Button = ({text, styleType}) => {
     }
 
     return (
-        <TouchableOpacity activeOpacity={0.9} style={buttonStyle}>
+        <TouchableOpacity activeOpacity={0.9} style={buttonStyle} onPress={SaveData}>
             <Text style={[TextStyle.whiteBoldMediumText, {textAlign: 'center'}]}>{text}</Text>
         </TouchableOpacity>
     )
