@@ -23,7 +23,7 @@ const Button = ({text, styleType, SaveData}) => {
 
     return (
         <TouchableOpacity activeOpacity={0.9} style={buttonStyle} onPress={SaveData}>
-            <Text style={[styles.whiteBoldMediumText, {textAlign: 'center'}]}>{text}</Text>
+            <Text style={[TextStyle.whiteBoldMediumText, {textAlign: 'center'}]}>{text}</Text>
         </TouchableOpacity>
     )
 }
