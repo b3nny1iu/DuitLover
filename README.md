@@ -13,6 +13,10 @@ Nama Anggota Kelompok :
 - User GitHub : angeliawidjaja (angeliawidjajaa@gmail.co.id)
 - Tugas : Membuat Home Page untuk menampilkan detail investasi dan list investasi yang aktif, membuat Base Styling untuk UI
 
+4. Richard
+- User Github : Richard Simarmata ( Richard.m.simarmata@gmail.com)
+- Tugas : membuat Login page
+
 
 Untuk Penjelasan Singkat :
 
