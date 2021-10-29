@@ -9,13 +9,15 @@ const LabelValue = ({textLabel, textValue, type}) => {
 
     switch (type) {
         case 'title':
-            labelStyle = [TextStyle.secondaryBoldMediumText, Padding.common_top_horizontal]
-            valueStyle = [TextStyle.darkBoldBigText, Padding.common_bottom_horizontal]
+            labelStyle = [TextStyle.secondaryBoldMediumText, Padding.title_top_horizontal]
+            valueStyle = [TextStyle.darkBoldBigText, Padding.title_bottom_horizontal]
             break;
-    
+        case 'header':
+            labelStyle = [Padding.common_top_horizontal]
+            valueStyle = [Padding.common_bottom_horizontal]
         default:
-            labelStyle = [TextStyle.secondaryBoldCaptionText, Padding.common_top_horizontal]
-            valueStyle = [TextStyle.darkBoldRegularText, Padding.common_bottom_horizontal]
+            labelStyle = [labelStyle === undefined ? Padding.little_top_horizontal : labelStyle, TextStyle.secondaryBoldCaptionText]
+            valueStyle = [valueStyle === undefined ? Padding.little_bottom_horizontal : valueStyle, TextStyle.darkBoldRegularText]
             break;
     }
 

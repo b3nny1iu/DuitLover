@@ -9,11 +9,13 @@ import { TextStyle } from '../styles/TextStyle'
 
 const HomePage = () => {
     const [activeInvestments, setActiveInvestments] = useState([])
+    const [totalInvestment, setTotalInvestment] = useState(0)
 
     useEffect(() => {
         const getActiveInvestmentList = async () => {
             const investmentsFromServer = await fetchActiveInvestments(1)
             setActiveInvestments(investmentsFromServer)
+            setTotalInvestment(calculateTotalInvestment())
         }
 
         getActiveInvestmentList()
@@ -25,6 +27,14 @@ const HomePage = () => {
         return data
     }
 
+    const calculateTotalInvestment = () => {
+        let total = 0
+        for (const invest of activeInvestments) {
+            total += parseFloat(invest.amount)
+        }
+        return total
+    }
+
     return (
         <View style={{flex: 1}}>
 
@@ -34,7 +44,7 @@ const HomePage = () => {
                     headerComponent={
                         <>
                             <Welcome />
-                            <InvestmentDetail roundedBorder={true} />
+                            <InvestmentDetail roundedBorder={true} data={{totalInvestment}} />
                             <Text style={[TextStyle.secondaryBoldBigText, Padding.common_top_horizontal]}>Active Investment List</Text>
                         </>
                     }

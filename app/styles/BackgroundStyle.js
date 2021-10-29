@@ -1,6 +1,7 @@
+import { StyleSheet } from "react-native";
 import { Color } from "./Color";
 
-export const BackgroundStyle = {
+export const BackgroundStyle = StyleSheet.create({
     secondaryBackground: {
         backgroundColor: Color.secondary,
     },
@@ -27,4 +28,4 @@ export const BackgroundStyle = {
         borderRadius: 10,
         margin: 10,
     },
-}
+})

@@ -1,7 +1,8 @@
+import { StyleSheet } from "react-native";
 import { Color } from "./Color";
 import { Dimens } from "./Dimens";
 
-export const TextStyle = {
+export const TextStyle = StyleSheet.create({
     whiteBoldMediumText: {
         fontWeight: 'bold',
         fontSize: Dimens.text_medium,
@@ -33,4 +34,4 @@ export const TextStyle = {
         fontSize: Dimens.text_regular,
         color: Color.dark,
     },
-}
+})
