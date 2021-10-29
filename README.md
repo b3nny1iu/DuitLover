@@ -17,6 +17,9 @@ Nama Anggota Kelompok :
 - User Github : Richard Simarmata ( Richard.m.simarmata@gmail.com)
 - Tugas : membuat Login page
 
+5. Heryanto
+- User Github : Heryanto87 ( Heryantoliao8@gmail.com)
+- Tugas : membuat Register page
 
 Untuk Penjelasan Singkat :
 
