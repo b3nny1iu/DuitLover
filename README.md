@@ -9,6 +9,10 @@ Nama Anggota Kelompok :
 - User GitHub : b3nny1iu (b3nnybonbon95@yahoo.co.id)
 - Tugas : Membuat page untuk insert data investment menggunakan Axios dan membuat Redux
 
+3. Angelia
+- User GitHub : angeliawidjaja (angeliawidjajaa@gmail.co.id)
+- Tugas : Membuat Home Page untuk menampilkan detail investasi dan list investasi yang aktif, membuat Base Styling untuk UI
+
 
 Untuk Penjelasan Singkat :
 
