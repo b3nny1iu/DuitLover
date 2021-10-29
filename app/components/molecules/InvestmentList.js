@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { FlatList } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { FlatList, RefreshControl } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveInvestmentList } from '../../store/InvestmentsReducer';
 import InvestmentItem from '../atom/InvestmentItem';
@@ -10,29 +10,34 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 const InvestmentList = ({headerComponent, footerComponent}) => {
+    const [refreshing, setRefreshing] = useState(false)
+
+    const onRefresh = () => {
+        setRefreshing(true)
+        getActiveInvestmentList()
+        handleDasboardInvestmentData()
+        setRefreshing(false)
+    }
+
     const investmentsData = useSelector((state) => state.investmentsReducer)
     const dashboardInvestmentData = useSelector((state) => state.dashboardCardReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        const getActiveInvestmentList = async () => {
-            let investmentsFromServer = await fetchActiveInvestments(1)
-            investmentsFromServer.forEach(invest => {
-                invest.createdAt = formatDate(invest.createdAt)
-            });
-            dispatch(setActiveInvestmentList(investmentsFromServer))
-        }
-
         getActiveInvestmentList()
     }, [])
 
     useEffect(() => {
+        handleDasboardInvestmentData()
+    }, [investmentsData, dashboardInvestmentData])
+
+    const handleDasboardInvestmentData = () => {
         dispatch(setTotalInvestment(calculateTotalInvestment()))
         dispatch(setAverageYearlyReturnValue(calculateReturnValue(type='year')))
         dispatch(setYearlyReturnRate(calculateReturnRate(type='year')))
         dispatch(setThisMonthReturnValue(calculateReturnValue(type='month')))
         dispatch(setThisMonthReturnRate(calculateReturnRate(type='month')))
-    }, [investmentsData, dashboardInvestmentData])
+    }
 
     const formatDate = (serverFormatDateString) => {
         let date = new Date(serverFormatDateString)
@@ -47,6 +52,14 @@ const InvestmentList = ({headerComponent, footerComponent}) => {
         let currDate = new Date()
         return date.getMonth() == currDate.getMonth()
     }
+
+    const getActiveInvestmentList = async () => {
+            let investmentsFromServer = await fetchActiveInvestments(1)
+            investmentsFromServer.forEach(invest => {
+                invest.createdAt = formatDate(invest.createdAt)
+            });
+            dispatch(setActiveInvestmentList(investmentsFromServer))
+        }
 
     const fetchActiveInvestments = async (userId) => {
         const response = await fetch(`https://61716cf3c20f3a001705fcdb.mockapi.io/duitlover/api/User/${userId}/InvestmentHeader`)
@@ -85,6 +98,7 @@ const InvestmentList = ({headerComponent, footerComponent}) => {
             data={investmentsData.activeInvestmentList}
             renderItem={renderItem}
             keyExtractor={item => item.id}
+            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
             ListHeaderComponent={headerComponent}
             ListFooterComponent={footerComponent}
         />
