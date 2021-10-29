@@ -9,7 +9,7 @@ import RegisterPage from '../screens/Register';
 
 const Stack = createNativeStackNavigator();
 
-export default function RouteNavigation() {
+const RouteNavigation = () => {
     return (
         <NavigationContainer initialRouteName={ScreenName.Register}>
             <Stack.Navigator>
@@ -25,3 +25,5 @@ export default function RouteNavigation() {
         </NavigationContainer>
     );
 }
+
+export default RouteNavigation

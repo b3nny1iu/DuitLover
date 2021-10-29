@@ -6,7 +6,7 @@ import RegisterForm from '../molecules/RegistrationForm'
 
 let buttonStyle = []
 
-const Button = ({text, styleType, SaveData}) => {
+const Button = ({text, styleType, onPress}) => {
 
     //const OnPressHandle = () => {
     //    console.log(returnValue)
@@ -25,7 +25,7 @@ const Button = ({text, styleType, SaveData}) => {
     }
 
     return (
-        <TouchableOpacity activeOpacity={0.9} style={buttonStyle} onPress={SaveData}>
+        <TouchableOpacity activeOpacity={0.9} style={buttonStyle} onPress={onPress}>
             <Text style={[TextStyle.whiteBoldMediumText, {textAlign: 'center'}]}>{text}</Text>
         </TouchableOpacity>
     )

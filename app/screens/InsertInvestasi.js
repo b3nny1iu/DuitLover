@@ -40,7 +40,7 @@ const InsertInvestasi = () => {
             </View>
             <Button text='Save Investment' 
             styleType='secondaryTopRoundedCorner' 
-            SaveData={OnPressSaveButton} 
+            onPress={OnPressSaveButton} 
             />
 
         </SafeAreaView>

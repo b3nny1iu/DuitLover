@@ -1,6 +1,6 @@
 export default {
-    Home:"HomePage",
+    Home            :"HomePage",
     InsertInvestment:"InsertInvestmentPage",
-    Login:"LoginPage",
-    Register:"RegisterPage"
+    Login           :"LoginPage",
+    Register        :"RegisterPage"
 }

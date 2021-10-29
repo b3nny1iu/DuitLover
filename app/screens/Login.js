@@ -20,7 +20,7 @@ const LoginPage = () => {
             <Button text='Login'
                 styleType='secondaryTopRoundedCornerLogin'
                 onPress={() => {
-                    navigation.navigate(ScreenName.Home)
+                    navigation.replace(ScreenName.Home)
                     console.log('Login Pressed')
                 }} />
             <Button text='or Register' styleType='secondaryTopRoundedCorner' onPress={() => {
