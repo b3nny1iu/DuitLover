@@ -16,9 +16,10 @@ export const BackgroundStyle = {
         height: 80,
     },
     secondaryTopRoundedBackground: {
-        backgroundColor: Color.secondary,
-        borderTopStartRadius: 10, 
-        borderTopEndRadius: 10
+        backgroundColor: Color.secondary
+    },
+    secondaryTopRoundedBackgroundLogin: {
+        backgroundColor: Color.primary
     },
     whiteShadowedCardView: {
         backgroundColor: Color.white,

@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import InputFieldText from '../atom/InputFieldText'
 
-const CreateRegistrationForm = () => {
+const LoginForm = () => {
 
     return (
         <View style={styles.StyleForm}>
-            <InputFieldText textLabel='Username' textPlaceholder='Username'  />
-            <InputFieldText textLabel='Password' textPlaceholder='Password' />
+            <InputFieldText textLabel='Email/ Username' textPlaceholder='Insert Your Email / Username'  />
+            <InputFieldText textLabel='Password' textPlaceholder='Insert Your Password' />
         </View>
     )
 }
 
-export default CreateRegistrationForm
+export default LoginForm
 
 const styles = StyleSheet.create({
     StyleForm: {

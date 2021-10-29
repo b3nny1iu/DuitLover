@@ -4,7 +4,7 @@ import { Color } from '../../styles/Color'
 import { Dimens } from '../../styles/Dimens'
 
 const InputFieldText = ({ textLabel, textPlaceholder }) => {
-    const [text, onChangeText] = useState(null);
+    const [text, onChangeText] = useState('');
 
     return (
         <View>

@@ -23,7 +23,8 @@
    Header,
  } from 'react-native/Libraries/NewAppScreen';
  
- import HomePage from './app/screens/Register';
+ import RegisterPage from './app/screens/Register';
+//  import LoginPage from './app/screens/Login';
  
  const Section = ({children, title}): Node => {
    const isDarkMode = useColorScheme() === 'dark';
@@ -61,7 +62,7 @@
    return (
      <SafeAreaView style={[backgroundStyle, {flex: 1}]}>
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <HomePage />
+       <RegisterPage/>
      </SafeAreaView>
      // <SafeAreaView style={backgroundStyle}>
      //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -83,6 +84,8 @@
    sectionContainer: {
      marginTop: 32,
      paddingHorizontal: 24,
+     alignItems:'center',
+     justifyContent:'center'
    },
    sectionTitle: {
      fontSize: 24,
