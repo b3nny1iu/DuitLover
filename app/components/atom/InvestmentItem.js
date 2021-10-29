@@ -6,8 +6,11 @@ import LabelValue from './LabelValue'
 const InvestmentItem = ({data}) => {
     return (
         <View style={BackgroundStyle.whiteShadowedCardView}>
-            <LabelValue textLabel={`${data.investment}`} type='title' />
-            <LabelValue textValue={`Amount: ${data.amount}`} />
+            <LabelValue textLabel={`${data.name}`} type='title' />
+            <LabelValue textLabel={'Date'} textValue={`${data.createdAt}`} />
+            <LabelValue textLabel={'Type'} textValue={`${data.type}`} />
+            <LabelValue textLabel={'Amount'} textValue={`${data.amount}`} />
+            <LabelValue textLabel={'Return'} textValue={`${data.return}%`} />
         </View>
     )
 }
