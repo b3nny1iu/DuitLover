@@ -3,17 +3,22 @@ import { StyleSheet, Text, View, TextInput } from 'react-native'
 import { Color } from '../../styles/Color'
 import { Dimens } from '../../styles/Dimens'
 import { useSelector, useDispatch } from 'react-redux'
-import { setName } from '../../store/SaveInvestmentReducer'
+import { setAmount, setReturn } from '../../store/SaveInvestmentReducer'
 
-const InputFieldText = ({ textLabel, textPlaceholder }) => {
-    const [text, setText] = useState(null);
+const InputFieldText = ({ textLabel, textPlaceholder, tipe }) => {
+    const [number, setNumber] = useState(null);
 
     const dispatch = useDispatch()
 
-    const onChangeText = (test) => {
-        setText(test)
-        dispatch(setName(test))
-
+    const onChangeNumber = (test) => {
+        setNumber(test)
+        if (tipe == 'amount') {
+            dispatch(setAmount(test))
+        }
+        else {
+            dispatch(setReturn(test))
+        }
+        
     }
 
     return (
@@ -21,9 +26,10 @@ const InputFieldText = ({ textLabel, textPlaceholder }) => {
             <Text style={styles.secondaryBoldMediumText}>{textLabel}</Text>
             <TextInput
                 style={styles.txtInput}
-                onChangeText={onChangeText}
-                value={text}
+                onChangeText={onChangeNumber}
+                value={number}
                 placeholder={textPlaceholder}
+                keyboardType="number-pad"
             />
         </View>
     )
