@@ -21,6 +21,7 @@ Nama Anggota Kelompok :
 Untuk Penjelasan Singkat :
 
 DuitLover adalah sebuah aplikasi yang didevelop dengan tujuan untuk membantu pencatatan dana investasi dari user. 
+"Karena kita semua harus punya Mimpi"
 
 Fitur yang disediakan adalah :
 - Register
