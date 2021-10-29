@@ -6,6 +6,7 @@ import InsertInvestasiForm from '../components/molecules/InsertInvestasiForm'
 import Button from '../components/atom/Button'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigation } from '@react-navigation/core'
 
 
 const InsertInvestasi = () => {
@@ -16,6 +17,8 @@ const InsertInvestasi = () => {
 
     const DataToSave = useSelector((state) => state.saveInvestmentReducer)
 
+    const navigation = useNavigation()
+
     const OnPressSaveButton = async () => {
         const SaveInvestment = await axios.post(PostURL, {
             name: DataToSave.investmentName,
@@ -25,6 +28,8 @@ const InsertInvestasi = () => {
         })
 
         console.log(SaveInvestment)
+
+        navigation.goBack()
     }
 
     return (
@@ -33,7 +38,10 @@ const InsertInvestasi = () => {
                 <InsertInvestasiForm />
 
             </View>
-            <Button text='Save Investment' styleType='secondaryTopRoundedCorner' SaveData={OnPressSaveButton} />
+            <Button text='Save Investment' 
+            styleType='secondaryTopRoundedCorner' 
+            SaveData={OnPressSaveButton} 
+            />
 
         </SafeAreaView>
     )

@@ -1,5 +1,6 @@
 export default {
     Home:"HomePage",
     InsertInvestment:"InsertInvestmentPage",
-    TestScreen:"TestScreenPage",
+    Login:"LoginPage",
+    Register:"RegisterPage"
 }

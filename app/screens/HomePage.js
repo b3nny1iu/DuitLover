@@ -6,13 +6,17 @@ import InvestmentList from '../components/molecules/InvestmentList'
 import Welcome from '../components/molecules/Welcome'
 import { Padding } from '../styles/Dimens'
 import { TextStyle } from '../styles/TextStyle'
+import { useNavigation } from '@react-navigation/core'
+import ScreenName from '../routes/ScreenName'
 
 const HomePage = () => {
 
-    return (
-        <View style={{flex: 1}}>
+    const navigation = useNavigation()
 
-            <View style={{flex: 1}}>
+    return (
+        <View style={{ flex: 1 }}>
+
+            <View style={{ flex: 1 }}>
                 <InvestmentList
                     headerComponent={
                         <>
@@ -24,7 +28,9 @@ const HomePage = () => {
                 />
             </View>
 
-            <Button text='Insert New Investment     +' styleType='secondaryTopRoundedCorner' />
+            <Button text='Insert New Investment     +'
+                styleType='secondaryTopRoundedCorner'
+                onPress={() => navigation.navigate(ScreenName.InsertInvestment)} />
 
         </View>
     )
